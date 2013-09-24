@@ -1,0 +1,63 @@
+/*
+Theme Name: Holding Page
+Theme URI: https://github.com/Ne-Ne/holding-page
+Description: Universal Holding Page
+Author: Neil Little
+Version: v1.00
+License: GPL v2
+License URI: https://github.com/Ne-Ne/holding-page/blob/master/LICENSE
+*/
+
+
+// Config = Compass (compass-style.org)
+@import "compass";
+
+//=====================> Base Styles
+
+//===> Sprites
+@import "module/sprites";
+
+//===> Main Global Settings
+@import "site-settings";
+
+//===> Adds Text Appearance (External Fonts [Typekit / Google Fonts], Local Files [./fonts/])
+@import "theme/typography";
+
+//===> Custom Scripts (Trans Background / Clearfix / REM+PX Fallback)
+@import "mixins";
+
+
+
+
+//=====================> Layouts
+
+//===> CSS Reset (normalize.css v2.1.0) [STRICT]
+@import "layout/base";
+
+
+//=====================> Boot Strap 3 (bs3) - Modules
+
+// NEIL COPY ALL THE BS3 FILE HERE !!!
+@import "bs3/variables";
+@import "bs3/bs3-mixins";
+
+// Core CSS
+@import "bs3/grid";
+@import "bs3/scaffolding";
+@import "bs3/type";
+
+// Components: common
+@import "bs3/component-animations";
+// IS THIS REALLY NEEDED! ?? @import "bs3/glyphicons";
+
+
+// Utility classes
+@import "bs3/utilities"; // Has to be last to override when necessary
+
+
+
+
+//=====================> Theme
+
+//===> Specifc Layouts (Adverts / External Embeded Apperanced [Comment Script / iFrames])
+@import "layout/site-specifics";

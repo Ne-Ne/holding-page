@@ -1,0 +1,57 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Set the container width, and override it for fixed navbars in media queries
+.container {
+  @include tb_container-fixed;
+}
+
+// Mobile-first defaults
+.row {
+  @include tb_makeRow;
+}
+[class^="span"] {
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($gridGutterWidth / 2);
+  padding-right: ($gridGutterWidth / 2);
+}
+
+// Responsive: Tablets and up
+@media screen and (min-width: 770px) {
+
+  #content{
+    width: 80%;
+  }
+
+  .main-heading h1{
+    padding: 0;
+  }
+
+  // Generate the grid columns and offsets
+  [class^="span"] { float: left; }
+  @include tb_grid-core($gridColumnWidth);
+
+}
+  
+
+// Responsive: Desktops and up
+@media screen and (min-width: 770px) and (max-width: 980px) {
+  #content{
+    width: 80%;
+  }
+}
+
+// Responsive: Desktops and up
+@media screen and (min-width: 981px) and (max-width: 1024px) {
+  #content{
+    width: 75%;
+  }
+}
+
+// Reset utility classes due to specificity
+[class*="span"].pull-right {
+  float: right;
+}

@@ -1,0 +1,88 @@
+/* Site Specifics
+*  Used which are not present in the grid.scss!
+*  Only -> NON child "Selector" / "ID" = Allowed
+*/
+
+// TYPEKIT -> REMOVING FOUT
+.wf-loading *, .wf-inactive *{
+    visibility: hidden;
+}
+
+html{
+	background:url("/images/body-bg.png") center center fixed no-repeat;
+	@include background-size(cover);
+}
+
+// Main Containers
+body{
+	@include font-body;
+	background:transparent;
+}
+
+// CENTER PAGE
+#content{
+	max-width: 830px;
+	height: auto;
+	margin:80px auto 0 auto;
+	padding:5%;
+	background:transparentize(rgb(40,40,40), 0.25);
+		.main-heading{
+			margin-bottom: 4%;
+			text-decoration:none;
+			@include transition(color 1s ease);
+				&:hover{
+					text-decoration:none;
+				}
+
+				h1{
+					@include font-size(7,7);
+				}
+		}
+		.sub-heading{
+			@include font-size(3,3);
+		}
+
+		.social-media{
+			width:(75px*3)+(10px*2);
+			margin: 5% auto 7.5% auto;
+				li{
+					float: left;
+					margin-left:10px;
+						&:first-child{
+							margin: 0;
+						}
+
+						// SOCIAL MEDIA ICONS
+						a[class*="-icon"]{
+							display: block;
+							width: 75px;
+							height: 75px;
+							@include filter(grayscale(100%));
+							@include transition(all .3s ease);
+								&.facebook-icon{
+									@include social-media-sprite(facebook);
+								}
+								&.twitter-icon{
+									@include social-media-sprite(twitter);
+								}
+								&.linkedin-icon{
+									@include social-media-sprite(linkedin);
+								}
+
+								&:hover{
+									@include filter(grayscale(0%))
+								}
+						}
+				}
+		}
+
+		#footer{
+			h2{
+				margin-top: 0;
+				@include font-size(2,2);
+			}
+			ul:first-child{
+				margin-left: 25%;
+			}
+		}
+}

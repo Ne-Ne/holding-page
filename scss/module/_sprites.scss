@@ -1,0 +1,8 @@
+//========> Social Media
+@import "social-media/*.png";
+$social-media-layout:smart;
+@include all-social-media-sprites;
+
+.facebook-icon{ @include social-media-sprite(facebook) }
+.twitter-icon{ @include social-media-sprite(twitter) }
+.linkedin-icon{ @include social-media-sprite(linkedin) }

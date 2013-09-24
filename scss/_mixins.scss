@@ -1,0 +1,60 @@
+/*
+* Custom Mixin's
+*
+*/
+
+
+//==============> Navigation
+.navigation{
+    list-style-type: none;
+        li{
+            float: left;
+                a{
+                    color:$textfont;
+                    // REMOVE HOVER UNDERLINE
+                    &:hover{
+                        text-decoration:none;
+                    }
+                }
+        }
+}
+
+
+//==============> Custom Mixin's
+@mixin zero{
+    margin:0;
+    padding:0;
+}
+
+// Sorts Out Font-Vertical Alignment + Fallback
+@mixin font-size($size:1.6, $line: $size * 1.5){
+    line-height: ($line * 10) + px;
+    line-height: $line + rem;
+    font-size:   ($size * 10) + px;
+    font-size:   $size + rem;
+}
+
+// Fall Back for RGBA -> (RGB / HEX)
+@mixin rgba-background($color, $opacity) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+
+//==============================> Keyframes Mixin
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content; 
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    } 
+}
